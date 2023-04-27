@@ -17,7 +17,6 @@ router.get('/', async (req, res) => {
       const posts = blogData.map((post) =>
         post.get({ plain: true })
       );
-      // TODO: Send over the 'loggedIn' session variable to the 'homepage' template
       res.render('homepage', {
         posts,
         loggedIn: req.session.loggedIn,
@@ -28,8 +27,8 @@ router.get('/', async (req, res) => {
     }
   });
 
-  //Shows specific post
-  router.get('/post/:id', async (req, res) => {
+//Shows specific post
+router.get('/post/:id', async (req, res) => {
     try {
     const blogData = await Post.findByPk(req.params.id, {
         include: [
@@ -51,14 +50,14 @@ router.get('/', async (req, res) => {
   
       res.render('post', {
         post,
-        logged_in: req.session.logged_in,
+        loggedIn: req.session.loggedIn,
       });
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
-  // Login route
+// Login route
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
@@ -66,13 +65,73 @@ router.get('/login', (req, res) => {
     }
     res.render('login');
   });
+
 //Sign-up page
-  router.get('/sign-up', (req, res) => {
+router.get('/sign-up', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
       return;
     }
     res.render('sign-up');
+  });
+
+//Shows all posts from the current user
+router.get("/dashboard", async (req, res) => {
+    try {
+      const blogData = await Post.findAll({
+        where: { user_id: req.session.user_id },
+        include: [
+            { 
+            model: User, 
+            attributes: ["username"] 
+            }],
+      });
+      
+      const posts = blogData.map((post) => post.get({ plain: true }));
+  
+      res.render("dashboard", {
+        posts,
+        loggedIn: req.session.loggedIn,
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+//Shows specific post to edit
+  router.get("/edit/:id", async (req, res) => {
+    try {
+      const blogData = await Post.findByPk(req.params.id, {
+        include: [
+          { 
+            model: User, 
+            attributes: ["username"] 
+        },
+          {
+            model: Comment,
+            include: [{ model: User, attributes: ["username"] }],
+          },
+        ],
+      });
+  
+      const post = blogData.get({ plain: true });
+  
+      res.render("edit-post", {
+        post,
+        loggedIn: req.session.loggedIn,
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+//Make a new post
+  router.get("/new-post", (req, res) => {
+    if (req.session.loggedIn) {
+      res.render("new-post");
+      return;
+    }
+    res.redirect("/login");
   });
 
 module.exports = router;
