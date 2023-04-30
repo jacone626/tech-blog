@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../../models/index');
+const withAuth = require("../../utils/auth");
 
 //Add a post
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
     try {
       const post = await Post.create({
         title: req.session.title,
@@ -64,7 +65,7 @@ router.get("/:id", async (req, res) => {
   });
 
 //Update a specific post
-router.put("/:id", async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
     try {
       const updatePost = await Post.update({
         title: req.body.title,
@@ -85,7 +86,7 @@ router.put("/:id", async (req, res) => {
   });
 
 //Delete a post
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
     try {
       const deletePost = await Post.destroy({
         where: { id: req.params.id },
@@ -100,3 +101,5 @@ router.delete("/:id", async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  module.exports = router;

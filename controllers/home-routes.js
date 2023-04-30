@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
   });
 
 //Shows specific post
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', withAuth, async (req, res) => {
     try {
     const blogData = await Post.findByPk(req.params.id, {
         include: [
@@ -76,7 +76,7 @@ router.get('/sign-up', (req, res) => {
   });
 
 //Shows all posts from the current user
-router.get("/dashboard", async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
     try {
       const blogData = await Post.findAll({
         where: { user_id: req.session.user_id },
