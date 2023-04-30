@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
 
 // CREATE new user
-router.post('/', async (req, res) => {
+router.post('/sign-up', async (req, res) => {
   try {
     const dbUserData = await User.create({
       username: req.body.username,
@@ -39,7 +39,7 @@ router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-        email: req.body.username,
+        username: req.body.username,
       },
     });
 
@@ -68,7 +68,7 @@ router.post('/login', async (req, res) => {
         .json({ user: dbUserData, message: 'You are now logged in!' });
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
 });
 
