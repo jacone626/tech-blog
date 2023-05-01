@@ -6,8 +6,7 @@ const withAuth = require("../../utils/auth");
 router.post("/", withAuth, async (req, res) => {
     try {
       const post = await Post.create({
-        title: req.session.title,
-        content: req.session.content,
+        ...req.body,
         user_id: req.session.user_id,
       });
       res.status(200).json(post);
@@ -67,11 +66,7 @@ router.get("/:id", async (req, res) => {
 //Update a specific post
 router.put("/:id", withAuth, async (req, res) => {
     try {
-      const updatePost = await Post.update({
-        title: req.body.title,
-        content: req.body.content,
-      },
-      {
+      const updatePost = await Post.update(req.body, {
         where: { id: req.params.id },
       });
   
