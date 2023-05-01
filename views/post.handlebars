@@ -1,7 +1,7 @@
 <main class="container mt-5">
   <article>
     <h1>{{post.title}}</h1>
-    <p>Created by: {{user.username}} | Date: {{format_date}}</p>
+    <p>Created by: {{post.user.username}} | Date: {{format_date createdAt}}</p>
     <p>{{post.content}}</p>
   </article>
     <form class="new-comment-form" class="mb-3">
@@ -17,12 +17,11 @@
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   <h2>Comment History:</h2>
-  {{#each comments as |comment|}}
-    <div class="comment mb-3">
+{{#each post.comments as |comment|}}
+    <div class=“comment mb-3”>
       <p>{{comment.content}}</p>
       <p>By {{user.username}} on {{format_date createdAt}}</p>
     </div>
   {{/each}}
 </main>
-
 

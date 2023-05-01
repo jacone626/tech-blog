@@ -1,28 +1,27 @@
-// Signup request
-const chessSignupFormHandler = async (event) => {
+
+const SignupFormHandler = async (event) => {
   event.preventDefault();
 
-  const username = document.querySelector('#username').value.trim();
-  const email = document.querySelector('#email').value.trim();
-  const password = document.querySelector('#password').value.trim();
+  const username = document.querySelector('#username-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
 
-  if (username && email && password) {
-    const response = await fetch('/api/users/signup', {
+  if (username && password) {
+    const response = await fetch('/api/users/sign-up', {
       method: 'POST',
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/'); // When successful, load the homepage
+      document.location.replace('/'); 
     } else {
-      alert('Failed to sign up.'); // When unsuccessful, show alert
+      alert('Failed to sign up.'); 
     }
   }
 };
 
 // Event listener
-const chessSignupForm = document.querySelector('#signup-form');
-if (chessSignupForm) {
-  chessSignupForm.addEventListener('submit', chessSignupFormHandler);
+const SignupForm = document.querySelector('.signup-form');
+if (SignupForm) {
+  SignupForm.addEventListener('submit', SignupFormHandler);
 }

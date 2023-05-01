@@ -27,30 +27,8 @@ const post_id = window.location.toString().split("/")[
     }
   };
   
-  // Delete the post
-  const deletePostFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const response = await fetch(`/api/posts/${post_id}`, {
-      method: "DELETE",
-    });
-  
-    if (response.ok) {
-      document.location.replace("/dashboard"); 
-    } else {
-      alert("Failed to delete a post.");
-    }
-  };
-  
-  // Event listeners
-  const updatePostButton = document.querySelector("#update-post-button");
-  
-  if (updatePostButton) {
-    updatePostButton.addEventListener("click", updatePostFormHandler);
-  }
-  
-  const deletePostButton = document.querySelector("#delete-post-button");
-  
-  if (deletePostButton) {
-    deletePostButton.addEventListener("click", console.log("hello"));
-  }
+const updatePostButton = document.querySelector("#update-post-button");
+
+if (updatePostButton) {
+  updatePostButton.addEventListener("click", updatePostFormHandler);
+}

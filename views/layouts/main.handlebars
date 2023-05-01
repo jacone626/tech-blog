@@ -10,33 +10,34 @@
 </head>
 
 <body>
+  <div id="home-page-banner">
     <nav>
-    <a href="/">Home</a>
-    <a href="/dashboard">Dashboard</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    <a href="/sign-up">Sign Up</a>
-    {{/if}}
-  </nav>
-  <header>
-    <h1>Tech Blog</h1>
-  </header>
-  
+      <a href="/">Home</a>
+      <a href="/dashboard">Dashboard</a>
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <a href="/login">Login</a>
+      <a href="/sign-up">Sign Up</a>
+      {{/if}}
+    </nav>
+      <header>
+         <h1 id="tech-blog">The Tech Blog</h1>
+      </header>
+  </div>
+
   <main>
-    <div class="gallery">
+    <div class="container">
       {{{body}}}
     </div>
   </main>
   {{#if loggedIn}}
-
+<script src="/js/logout.js"></script>
   {{/if}}
 </body>
 
 <script src="/js/edit-post.js"></script>
 <script src="/js/login.js"></script>
-<script src="/js/logout.js"></script>
 <script src="/js/new-post.js"></script>
 <script src="/js/signup.js"></script>
 <script src="/js/new-comment.js"></script>
