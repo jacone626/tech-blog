@@ -16,13 +16,12 @@
                     <label for="post-content">Content</label>
                     <textarea class="entry-field" id="post-content" name="post-content">{{post.content}}</textarea>
                 </div>
-                <button type="submit">Update post</button>
-                <button type="button" class="delete-post-btn">Delete post</button>
+                <button type="submit" id="update-post-button">Update post</button>
+                <button type="button" id="delete-post-button" class="delete-post-btn">Delete post</button>
             </form>
         </div>
     </section>
 </article>
 
-{{#if loggedIn}}
-<script src="./js/edit-post.js"></script>
-{{/if}}
+
+

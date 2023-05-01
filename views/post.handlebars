@@ -4,7 +4,7 @@
     <p>Created by: {{user.username}} | Date: {{format_date}}</p>
     <p>{{post.content}}</p>
   </article>
-  {{#if logged_in}}
+  {{!-- {{#if logged_in}} --}}
     <form class="new-comment-form" class="mb-3">
       <div class="mb-3">
         <label for="comment" class="form-label">Add Comment:</label>
@@ -17,7 +17,7 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-  {{/if}}
+  {{!-- {{/if}} --}}
   <h2>Comment History:</h2>
   {{#each comments as |comment|}}
     <div class="comment mb-3">
@@ -26,4 +26,3 @@
     </div>
   {{/each}}
 </main>
-
