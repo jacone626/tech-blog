@@ -24,11 +24,11 @@ body {
 }
 
 #tech-blog {
-  background: white;
   text-align: center;
   border-radius: .15em;
   width: 30%;
   box-shadow: 10px 10px;
+  background-color: #8fecbf;
 }
 
 a {
@@ -157,6 +157,9 @@ nav a:hover {
   font-weight: bold;
 }
 
+.green-color{
+  background-color: #8fecbf;
+}
 /* LAYOUT */
 .container {
   display: flex;
