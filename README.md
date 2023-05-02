@@ -7,7 +7,7 @@ This application is a tech blog that allows users to post a blog and comment on 
 N/A
 
 ## Usage
-A user must navigate to the website by clicking on the heroku link provided. Once there, the user will see a homepage which displays
+A user must navigate to the website by clicking on the heroku link provided. Once there, the user will see a homepage which displays the title and current blog posts.
 
 ![homepage with links at top and three blog posts](public/images/homepage.png)
 
@@ -15,7 +15,7 @@ Once you try to click on a post you will be routed to a login page. If you don't
 
 ![view of login page with sign up link at top as well](public/images/login-page.png)
 
-After you login, you will be taken back to the homepage with blog post. If you click on a blog post, you can see the comment history or add a comment yourself.
+After you login, you will be taken back to the homepage with all of the blog posts. If you click on a specific blog post, you can see the comment history or add a comment yourself.
 
 ![blog post with text box to add a comment and recent comments below](public/images/comment-history.png)
 
