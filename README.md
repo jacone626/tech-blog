@@ -4,34 +4,34 @@
 This application is a tech blog that allows users to post a blog and comment on other blogs. It uses the MVC file structure in order to load dynamic webpages. 
 
 ## Installation
-Ensure that you have node and jest installed. Then, just clone the repository into VSCode or some other coding application. 
+N/A
 
 ## Usage
-A user must clone the repository and navigate to the correct folder within the terminal. Once in the correct folder, type in "node index.js". The user will then be prompted with the first question, which is to enter up to 3 characters.
+A user must navigate to the website by clicking on the heroku link provided. Once there, the user will see a homepage which displays
 
-![command line with first question asking for up to 3 characters](images/logo-maker-first.png)
+![homepage with links at top and three blog posts](public/images/homepage.png)
 
-Once you enter your response, press enter and the next question will come up. After the final question, which asks for the color of your shape, the terminal will log "Logo has been created".
+Once you try to click on a post you will be routed to a login page. If you don't already have a login, you will need to click on sign-up instead. You will be prompted to enter a username and password then can hit enter.
 
-![command line with all questions and Logo generated logged](images/logo-maker-all.png)
+![view of login page with sign up link at top as well](public/images/login-page.png)
 
-Within the project, a new file with your generated logo will be created. This file is titled "logo.svg" and will look like the below picture.
+After you login, you will be taken back to the homepage with blog post. If you click on a blog post, you can see the comment history or add a comment yourself.
 
-![logo.svg that was generated with user responses. Black circle with blue text](images/logo-maker-circle.png)
+![blog post with text box to add a comment and recent comments below](public/images/comment-history.png)
 
-To test the code and ensure that a shape was rendered, run "npm run test" in the command line. The result below, shows that the circle, square, and triangle all passed the test and were properly rendered. 
+You can also navigate to the dashboard page. This shows all of your posts and gives you the option to create a new post. You also have the option to edit or delete any of your previous posts by simply clicking on the "edit post" or "Delete" buttons. 
+
+![dashboard page with your current posts and option to edit or delete](public/images/dashboard.png)
 
 
-![command line with the three tests that all passed](images/logo-maker-tests.png)
+Below is a link to the deployed application:
 
-Below is the walkthrough video:
 
-[Untitled_ Apr 4, 2023 9_07 AM.webm](https://user-images.githubusercontent.com/121627491/229809995-e4231188-cc76-4c4e-aef0-d28e9e399993.webm)
 
 
 ## Credits
 
-https://www.w3schools.com/graphics/svg_intro.asp
+N/A
 
 ## License
 Please refer to the license in the repo.
