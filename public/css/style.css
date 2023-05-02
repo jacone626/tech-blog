@@ -173,13 +173,46 @@ nav a:hover {
   border-style: solid;
 }
 
-.post-title-section{
+.post-title-section, .post-content-form{
   display: flex;
   justify-content: center;
+}
+
+.submit-button{
+float: right;
+margin-right: 25%;
 }
 
 .comment-history{
   border: black;
   border-width: 3px;
   border-style: solid;
+}
+
+.form-section{
+  width: 400px;
+}
+
+#post-title{
+  height: 40px;
+  width: 200px;
+  margin-left: 3%;
+}
+
+#post-content{
+  height: 100px;;
+  width: 200px;
+}
+
+#update-post-button{
+  margin-left: 30%;
+}
+
+#add-comment{
+  margin-right: 5%;
+}
+
+#new-comment-form{
+  width: 50%;
+  margin-top: 2%;
 }
