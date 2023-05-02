@@ -95,7 +95,7 @@ nav a:hover {
   text-align: center;
 }
 
-#homepage-header {
+.homepage-header {
   display: inline-block;
   background-color: rgb(98, 47, 47);
   width: 100%;
@@ -165,6 +165,17 @@ nav a:hover {
 }
 
 .post-boxes{
+  border: black;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.post-title-section{
+  display: flex;
+  justify-content: center;
+}
+
+.comment-history{
   border: black;
   border-width: 3px;
   border-style: solid;

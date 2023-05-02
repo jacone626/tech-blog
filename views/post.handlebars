@@ -1,7 +1,8 @@
 <main class="container mt-5">
-  <article>
-    <h1>{{post.title}}</h1>
+  <article class="post-list post-boxes">
+    <h2 class="homepage-header">{{post.title}}
     <p>Created by: {{post.user.username}} | Date: {{format_date createdAt}}</p>
+    </h2>
     <p>{{post.content}}</p>
   </article>
     <form class="new-comment-form" class="mb-3">
@@ -18,7 +19,7 @@
     </form>
   <h2>Comment History:</h2>
 {{#each post.comments as |comment|}}
-    <div class=“comment mb-3”>
+    <div class="comment-history m-2 p-1">
       <p>{{comment.content}}</p>
       <p>By {{user.username}} on {{format_date createdAt}}</p>
     </div>
