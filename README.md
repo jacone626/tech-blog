@@ -26,7 +26,7 @@ You can also navigate to the dashboard page. This shows all of your posts and gi
 
 Below is a link to the deployed application:
 
-
+https://tech-blog-jacone626.herokuapp.com/
 
 
 ## Credits
